@@ -2,6 +2,10 @@
 
 This repository contains a Docker setup for Texlive, a comprehensive TeX system. It allows users to compile LaTeX documents in a consistent environment without needing to install Texlive directly on their local machine. The Docker container includes all necessary dependencies and tools to work with LaTeX files efficiently.
 
+## This repository has automation for building Docker images which are available on the following links:
+
+[Drone CI](https://drone.supanadit.com/supanadit/docker-texlive)
+
 ## Requirements
 
 - Docker
