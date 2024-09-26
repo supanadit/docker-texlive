@@ -28,3 +28,7 @@ docker run --rm -it -w "/tex" -v %cd%:/tex git.supanadit.com/supanadit/docker-te
 ## Notes
 
 I currently have only full version of texlive, but I will add more version in the future. Even light version of texlive on busybox and scratch.
+
+## Original Repository
+
+https://git.supanadit.com/supanadit/docker-texlive
