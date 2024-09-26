@@ -1,13 +1,23 @@
 FROM alpine:3.20.3
 
-RUN apk add perl wget
+RUN apk add wget perl make
+
+ENV TEXLIVE_INSTALL_TEXMFLOCAL=/usr/local/texlive/texmf-local
+ENV TEXLIVE_INSTALL_TEXMFSYSVAR=/usr/local/texlive/texmf-var
+ENV TEXLIVE_INSTALL_TEXMFSYSCONFIG=/usr/local/texlive/texmf-config
+
+ENV TEXLIVE_INSTALL_TEXMFHOME=~/.texlive/texmf
+ENV TEXLIVE_INSTALL_TEXMFVAR=~/.texlive/texmf-var
+ENV TEXLIVE_INSTALL_TEXMFCONFIG=~/.texlive/texmf-config
 
 WORKDIR /tmp
-RUN wget -O tinytex.tar.gz https://yihui.org/tinytex/TinyTeX-0.tar.gz
-RUN tar -xzvf tinytex.tar.gz
 
-RUN mv .TinyTeX /root/.TinyTeX
+RUN wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+RUN tar -xvzf install-tl-unx.tar.gz
+RUN sh -c 'cd install-tl-* && perl ./install-tl --no-interaction --scheme=minimal --profile texlive.profile --no-doc-install --no-src-install --texdir=/usr/local/texlive'
 
-ENV PATH="/root/.TinyTeX/bin/x86_64-linux:${PATH}"
+ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
+RUN tlmgr init-usertree
 
-RUN wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+# From TLMGR
+RUN tlmgr install enumitem fancyhdr ragged2e xifthen xstring ifmtarg fontawesome5 setspace roboto sourcesanspro tcolorbox parskip tikzfill
