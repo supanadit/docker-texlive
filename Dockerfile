@@ -1,21 +1,24 @@
 FROM ubuntu:24.04
 
 RUN apt-get update
-RUN apt-get install -y wget perl libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev build-essential chrpath libssl-dev libxft-dev git
-RUN wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+RUN apt-get install -y wget perl
 
-ENV PATH="/root/bin:${PATH}"
+ENV TEXLIVE_INSTALL_TEXMFLOCAL=/usr/local/texlive/texmf-local
+ENV TEXLIVE_INSTALL_TEXMFSYSVAR=/usr/local/texlive/texmf-var
+ENV TEXLIVE_INSTALL_TEXMFSYSCONFIG=/usr/local/texlive/texmf-config
 
-WORKDIR /root
+ENV TEXLIVE_INSTALL_TEXMFHOME=~/.texlive/texmf
+ENV TEXLIVE_INSTALL_TEXMFVAR=~/.texlive/texmf-var
+ENV TEXLIVE_INSTALL_TEXMFCONFIG=~/.texlive/texmf-config
 
-# # From Git
-# WORKDIR /tmp
+WORKDIR /tmp
 
-# RUN git clone https://github.com/T-F-S/tikzfill.git
-# RUN cp -R tikzfill/tex /root/.TinyTeX/texmf-dist
+RUN wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+RUN tar -xvzf install-tl-unx.tar.gz
+RUN sh -c 'cd install-tl-* && perl ./install-tl --no-interaction --scheme=minimal --profile texlive.profile --no-doc-install --no-src-install --texdir=/usr/local/texlive'
 
-# # Cleaning Up
-# RUN rm -rf /tmp/tikzfill
+ENV PATH="/usr/local/texlive/bin/x86_64-linux:${PATH}"
+RUN tlmgr init-usertree
 
 # From TLMGR
 RUN tlmgr install enumitem fancyhdr ragged2e xifthen xstring ifmtarg fontawesome5 setspace roboto sourcesanspro tcolorbox parskip tikzfill
