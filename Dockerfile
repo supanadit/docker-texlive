@@ -1,6 +1,6 @@
 FROM alpine:3.20.3
 
-RUN apk add wget perl make
+RUN apk add wget perl make fontconfig
 
 ENV TEXLIVE_INSTALL_TEXMFLOCAL=/usr/local/texlive/texmf-local
 ENV TEXLIVE_INSTALL_TEXMFSYSVAR=/usr/local/texlive/texmf-var
@@ -20,4 +20,4 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 RUN tlmgr init-usertree
 
 # From TLMGR
-RUN tlmgr install enumitem fancyhdr ragged2e xifthen xstring ifmtarg fontawesome5 setspace roboto sourcesanspro tcolorbox parskip tikzfill
+RUN tlmgr install enumitem fancyhdr ragged2e xifthen xstring ifmtarg fontawesome5 setspace roboto sourcesanspro tcolorbox parskip tikzfill xetex geometry etoolbox fontspec xkeyval unicode-math amsmath kvoptions kvsetkeys ltxcmds hyperref bookmark
