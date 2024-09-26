@@ -20,6 +20,7 @@ docker run --rm -it -w "/tex" -v %cd%:/tex git.supanadit.com/supanadit/docker-te
 ## Available Tags
 
 - `1.0.0-ubuntu-full.1` - Full version of texlive on ubuntu
+- `1.0.0-alpine.1` - Lite version of texlive on alpine
 - `0.0.1-awesome-cv.1` - Tailored version for [Awesome CV](https://github.com/posquit0/Awesome-CV) based on Ubuntu
 - `0.0.2-awesome-cv.1` - Tailored version for [Awesome CV](https://github.com/posquit0/Awesome-CV) based on Ubuntu ( Broken don't used it )
 - `0.0.2-awesome-cv.2` - Tailored version for [Awesome CV](https://github.com/posquit0/Awesome-CV) based on Ubuntu ( Fixed version, for smaller image size )
@@ -29,11 +30,3 @@ docker run --rm -it -w "/tex" -v %cd%:/tex git.supanadit.com/supanadit/docker-te
 
 - [Docker Hub](https://hub.docker.com/r/supanadit/docker-texlive)
 - [My Gitea Registry](https://git.supanadit.com/supanadit/-/packages/container/docker-texlive)
-
-## Notes
-
-I currently have only full version of texlive, but I will add more version in the future. Even light version of texlive on busybox and scratch.
-
-## Original Repository
-
-https://git.supanadit.com/supanadit/docker-texlive
