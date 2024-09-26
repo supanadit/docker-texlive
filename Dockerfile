@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
 RUN apt-get update
-RUN apt-get install -y wget perl
+RUN apt-get install -y wget perl make libfontconfig1
 
 ENV TEXLIVE_INSTALL_TEXMFLOCAL=/usr/local/texlive/texmf-local
 ENV TEXLIVE_INSTALL_TEXMFSYSVAR=/usr/local/texlive/texmf-var
@@ -21,4 +21,4 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linux:${PATH}"
 RUN tlmgr init-usertree
 
 # From TLMGR
-RUN tlmgr install enumitem fancyhdr ragged2e xifthen xstring ifmtarg fontawesome5 setspace roboto sourcesanspro tcolorbox parskip tikzfill
+RUN tlmgr install enumitem fancyhdr ragged2e xifthen xstring ifmtarg fontawesome5 setspace roboto sourcesanspro tcolorbox parskip tikzfill xetex geometry etoolbox fontspec xkeyval unicode-math amsmath kvoptions kvsetkeys ltxcmds hyperref bookmark
