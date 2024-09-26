@@ -25,6 +25,11 @@ docker run --rm -it -w "/tex" -v %cd%:/tex git.supanadit.com/supanadit/docker-te
 - `0.0.2-awesome-cv.2` - Tailored version for [Awesome CV](https://github.com/posquit0/Awesome-CV) based on Ubuntu ( Fixed version, for smaller image size )
 - `0.0.3-awesome-cv.1` - Tailored version for [Awesome CV](https://github.com/posquit0/Awesome-CV) based on Alpine ( Recomended )
 
+## Available Registry
+
+- [Docker Hub](https://hub.docker.com/r/supanadit/docker-texlive)
+- [My Gitea Registry](https://git.supanadit.com/supanadit/-/packages/container/docker-texlive)
+
 ## Notes
 
 I currently have only full version of texlive, but I will add more version in the future. Even light version of texlive on busybox and scratch.
