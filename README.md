@@ -21,6 +21,9 @@ docker run --rm -it -w "/tex" -v %cd%:/tex git.supanadit.com/supanadit/docker-te
 
 - `1.0.0-ubuntu-full.1` - Full version of texlive on ubuntu
 - `0.0.1-awesome-cv.1` - Tailored version for Awesome CV based on Ubuntu
+- `0.0.2-awesome-cv.1` - Tailored version for Awesome CV based on Ubuntu ( Broken don't used it )
+- `0.0.2-awesome-cv.2` - Tailored version for Awesome CV based on Ubuntu ( Fixed version, for smaller image size )
+- `0.0.3-awesome-cv.1` - Tailored version for Awesome CV based on Alpine ( Recomended )
 
 ## Notes
 
