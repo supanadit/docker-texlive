@@ -13,7 +13,7 @@ ENV TEXLIVE_INSTALL_TEXMFCONFIG=~/.texlive/texmf-config
 
 WORKDIR /tmp
 
-RUN wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+RUN wget https://mirror.supanadit.com/install-tl-unx.tar.gz
 RUN tar -xvzf install-tl-unx.tar.gz
 RUN sh -c 'cd install-tl-* && perl ./install-tl --no-interaction --scheme=minimal --profile texlive.profile --no-doc-install --no-src-install --texdir=/usr/local/texlive'
 
