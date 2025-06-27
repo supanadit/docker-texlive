@@ -10,11 +10,11 @@ This repository contains a Docker setup for Texlive, a comprehensive TeX system.
 
 ```bash
 # Linux / Mac
-docker run --rm -it -w "/tex" -v "$PWD":/tex git.supanadit.com/supanadit/docker-texlive:1.0.0-ubuntu-full.1
+docker run --rm -it -w "/tex" -v "$PWD":/tex supanadit/docker-texlive:1.0.0-ubuntu-full.1
 # Powershell
-docker run --rm -it -w "/tex" -v ${PWD}:/tex git.supanadit.com/supanadit/docker-texlive:1.0.0-ubuntu-full.1
+docker run --rm -it -w "/tex" -v ${PWD}:/tex supanadit/docker-texlive:1.0.0-ubuntu-full.1
 # CMD
-docker run --rm -it -w "/tex" -v %cd%:/tex git.supanadit.com/supanadit/docker-texlive:1.0.0-ubuntu-full.1
+docker run --rm -it -w "/tex" -v %cd%:/tex supanadit/docker-texlive:1.0.0-ubuntu-full.1
 ```
 
 ## Available Tags
@@ -29,4 +29,3 @@ docker run --rm -it -w "/tex" -v %cd%:/tex git.supanadit.com/supanadit/docker-te
 ## Available Registry
 
 - [Docker Hub](https://hub.docker.com/r/supanadit/docker-texlive)
-- [My Gitea Registry](https://git.supanadit.com/supanadit/-/packages/container/docker-texlive)
